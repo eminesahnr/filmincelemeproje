@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Vertigo</title>
+    <style>
+        /* Genel Stil Ayarları */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #2b2b2b;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(90deg, #b71c1c, #ff6f61);
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #ffe5e5;
+            font-style: italic;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        video {
+            border: 5px solid #b71c1c;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #b71c1c;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+
+        table tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #ffebe5;
+            transition: background-color 0.3s;
+        }
+
+        .additional-text {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 2px solid #b71c1c;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .additional-text p {
+            line-height: 1.8;
+        }
+
+        img {
+            border: 2px solid #b71c1c;
+            border-radius: 5px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border: 2px solid #b71c1c;
+            border-radius: 10px;
+        }
+
+        .flex-container img {
+            width: 150px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .flex-container img:hover {
+            transform: scale(1.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            video {
+                width: 100%;
+                height: auto;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            .flex-container img {
+                width: 100px;
+            }
+        }
+      /* Genel Stil */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+/* Yorum Kutusu */
+.comment-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Yorumları Listele */
+#comments {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.comment {
+    background-color: #ecf0f1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #3498db; /* Yorumların başında modern bir renk */
+    font-size: 1rem;
+}
+
+.comment p {
+    margin: 0;
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+/* Yorum Gönderme Alanı */
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px;
+    border: 1px solid #ff0000;
+    border-radius: 8px;
+    resize: none;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: #ecf0f1;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #db3434;
+    background-color: #fff;
+}
+
+button {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #7f0000;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Tasarım */
+@media screen and (max-width: 768px) {
+    .comment-section {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    textarea {
+        max-width: 100%;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+
+button#submit-comment:hover {
+    background-color: #ff6f61;
+}
+
+        .social-links a {
+	display: inline-block;
+	
+	margin: 0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: white;
+	transition: all 0.5s ease;
+}
+        .footer-bottom {
+    text-align: center;
+    padding: 10px 0; /* İçerik ve sınır arası boşluk */
+    background-color: #0c0050; /* Daha koyu bir alt arka plan */
+    color: #bbb; /* Açık gri yazı rengi */
+    font-size: 14px; /* Daha küçük yazı boyutu */
+  }
+  
+  .footer-bottom p {
+    margin: 0; /* Varsayılan boşlukları kaldır */
+  }
+  .footer .search {
+    display: flex; /* Arama kutusu ve butonun yan yana gelmesi için */
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .search .search-input {
+    width: 15rem; /* Input kutusunun genişliği */
+    padding: 0.5rem; /* İç boşluk */
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-right: 1rem; /* Buton ile arama kutusu arasında boşluk */
+    margin-top: 20px;
+    margin-left: 70px;
+}
+   .footer .search .btn{
+   
+    background-color: rgb(187, 187, 255);
+    padding: 0.7rem 1.5rem; /* Buton içindeki boşluk */
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.search .btn i {
+    font-size: 13px; /* İkon boyutunu ayarlama */
+    color: white; /* İkon rengi */
+  
+}
+
+.footer .search .btn:hover {
+    background-color: rgb(153, 153, 255); /* Hover (üzerine gelindiğinde) renk değişikliği */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vertigo</h1>
+        <p>Alfred Hitchcock'un klasik gerilim filmi.</p>
+    </header>
+    <div class="container">
+        <video autoplay muted loop>
+            <source src="vertigotrailer.mp4" type="video/mp4">
+            Tarayıcınız video etiketini desteklemiyor.
+        </video>
+        <table>
+            <tr>
+                <th>Yönetmen</th>
+                <td>Alfred Hitchcock</td>
+            </tr>
+            <tr>
+                <th>Senarist</th>
+                <td>Boileau Narcejac, Alec Coppel</td>
+            </tr>
+            <tr>
+                <th>Oyuncular</th>
+                <td>James Stewart, Kim Novak, Barbara Bel Geddes</td>
+            </tr>
+            <tr>
+                <th>Aldığı Ödüller</th>
+                <td>1958 National Board of Review En İyi Film Ödülü, 2012 Sight & Sound En İyi Film</td>
+            </tr>
+        </table>
+        <div class="additional-text">
+            <p>Vertigo, Alfred Hitchcock'un yönetmenliğinde 1958 yılında çekilmiş bir gerilim klasiğidir. San Francisco'da geçen bu film, yükseklik korkusu olan bir dedektifin hikayesini işler.</p>
+        </div>
+    </div>
+    <div class="additional-text">
+        <p>Ölüm Korkusu, 1958 ABD yapımı gerilim filmidir. Özgün adı Vertigo (İng. baş dönmesi) olan film 2 Ocak 1961'de Türkiye'de sinemalarda gösterime girmiştir.[1][2]
+    
+            Fransız yazarlar Pierre Boileau ve Thomas Narcejac'ın 1954'te birlikte yazdıkları D'entre les morts adlı romandan uyarlanan filmi Alfred Hitchcock yönetmiş, başlıca rollerini James Stewart, Kim Novak ve Barbara Bel Geddes paylaşmışlardır.
+            
+            "Vertigo", 1989 yılında Kongre Kütüphanesi tarafından "kültürel, tarihi ve estetik olarak önemli" filmler arasına seçilerek ABD Ulusal Film Arşivi'nde muhafaza edilmesine karar verilmiştir.</p>
+           <h1> Konusu</h1>
+            <p>San Francisco polislerinden Dedektif Scottie Ferguson (James Stewart) bir suçluyu kovalarken damdan düşen ortağını kurtaramaz ve kendisinde yükseklik korkusu başlar. Polisliği bırakan ve özel dedektif olan Scottie'yi, eski okul arkadaşı Gavin Elster karısını takip etmesi için tutar. Scottie, genç kadının peşinden San Francisco'ya döner. Arkadaşının anlattıklarına göre eşi bazen sanki içine kapanıyor, alışık olmadık davranışlar sergiliyordur. Scottie arkadaşının karısı Madeleine'i (Kim Novak) izlemeye başlar. Gerçekten de kadın garip davranmakta, bir resim müzesindeki özel bir resim önünde, resme bakarak saatlerini geçirmektedir. Dedektif resimdeki kişinin geçen yüzyılda yaşayan bir asilzade kadın olduğunu öğrenir. Madeleine ise tamamen bu kadını kendine örnek almakta onun gibi giyinmekte, onun gibi olmaya çalışmaktadır, hatta onun yaptığı gibi intihar etmek istemektedir! Scottie olaylara derinlemesine inince kendi akıl sağlığı da bozulmaya başlar ama sorunu da çözmeyi başarır.</p>
+            <h1>Senaryo</h1>
+            <p>Bir dedektifin yükseklik korkusuyla olan mücadelesini ve bu korkunun ona nasıl zarar verdiğini anlatırken, aynı zamanda bir aşk hikayesi ve kimlik değişimi temasını işler. Filmdeki başlıca karakter, eski polis dedektifi John "Scottie" Ferguson (James Stewart), yükseklik korkusu yüzünden görevini kaybetmiş ve emekli olmuştur. Scottie'nin korkusu, onu bir çatının kenarında dururken dengesini kaybedip düşme tehlikesi yaşadığı bir sahneyle tanıtılır. Bu sahne, filmdeki "vertigo" (yükseklik korkusu) temasını simgeler ve hikayenin geri kalanında bu korkunun Scottie üzerinde nasıl bir etkisi olacağını gösterir.</p>
+            <p>Scottie'nin eski arkadaşı Gavin Elster tarafından görevlendirilmesiyle başlar. Elster, Scottie'den eşi Madeleine Elster'ı gözlemlemesini ister, çünkü Madeleine’in davranışları ve kişiliği hakkında endişeleri vardır. Scottie, Madeleine’i takip etmeye başladığında, San Francisco’nun tarihi yerleri ve şehir manzaraları arasında gizemli bir yolculuğa çıkar. Madeleine’in geçmişi, eski ailesi ve ölümüne dair bilinmeyenler, Scottie’yi giderek daha fazla büyüler. Bu süreçte Scottie, Madeleine’e aşık olur ve onun gizemini çözmek için takıntılı bir şekilde araştırmalara başlar</p>
+            <p>Film, senaryosunun sunduğu karmaşık yapının yanı sıra Hitchcock'un ustaca uyguladığı sinematografi teknikleriyle de dikkat çeker. Örneğin, Scottie'nin yükseklik korkusunu yaşadığı sahnelerde kullanılan özel "dizzy" (baş dönmesi) kamerayla çekimler, izleyicinin Scottie’nin perspektifinden dünyayı görmesini ve onun korkusunu hissetmesini sağlar. Bu teknik, filmdeki gerilim ve psikolojik öğelerin yoğunluğunu artırır.</p>
+            <p>Scottie’nin Madeleine’e olan takıntısı ve onu koruma arzusunun, onu gerçeklikten uzaklaştırarak başka bir kimliğe bürünmesine neden olması, filmdeki kimlik değişimi ve takıntı temalarını vurgular. Madeleine’in ölüm sahnesi ve sonrasında yaşanan olaylar, filmi klasik bir cinayet soruşturmasından çok daha derin bir hale getirir. Scottie'nin, Madeleine’in ölümünden sonra yaşadığı psikolojik çöküş ve daha sonra karşılaştığı Judy Barton ile ilişkisi, filmdeki en büyük sürprizlerden biridir. Judy, Madeleine'in gerçek kimliğidir ve Scottie'nin onu yeniden yaratma çabası, filmdeki kimlik ve yeniden doğuş temasını güçlendirir.</p>
+            <p>İnsan doğasının karanlık yönlerini, takıntıların ve obsesyonların insan psikolojisini nasıl değiştirdiğini inceler. Bu temalar, Vertigo'yu sadece bir film değil, sinema tarihindeki önemli bir eser haline getirmiştir. Film, izleyiciyi sürekli şaşırtan ve onları karakterlerin karmaşık iç dünyasına çekerek, klasik bir Hitchcock filmi olmanın ötesinde bir psikolojik başyapıt sunar.</p>
+            <p></p>
+        </div>
+    <h2>Oyuncular</h2>
+    <div class="flex-container">
+        <div>
+            <img src="https://img05.imgsinemalar.com/images/afis_buyuk/j/james-stewart-1412784065.jpg" alt="James Stewart">
+            <p>James Stewart</p>
+        </div>
+        <div>
+            <img src="https://img03.imgsinemalar.com/images/afis_buyuk/k/kim-novak-1518424653.jpg" alt="Kim Novak">
+            <p>Kim Novak</p>
+        </div>
+        <div>
+            <img src="https://img05.imgsinemalar.com/images/sanatci/Barbara-Bel-Geddes.jpg" alt="Barbara Bel Geddes">
+            <p>Barbara Bel Geddes</p>
+        </div>
+    </div>
+     <!-- Yorumlar Bölümü -->
+     <div class="comment-section">
+        <h2>Yorumlar</h2>
+        <div id="comments">
+            <!-- Yorumlar burada görünecek -->
+        </div>
+        <div class="comment-form">
+            <textarea id="comment-input" placeholder="Yorumunuzu buraya yazın..." rows="4"></textarea>
+            <button id="submit-comment">Gönder</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="search">
+            <input type="text" class="search-input" placeholder="Search">
+            <button class="btn btn-primary">
+                <i class="bi bi-search"></i> <!-- Bootstrap Icons arama ikonu -->
+            </button>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="social-links">
+                <!-- Twitter -->
+                <a href="https://twitter.com/eminesahiner0" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-twitter"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/gulferr.r/" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/gülferyiğit" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+              
+            <p>&copy; <span id="year"></span> 2024 Tüm haklar saklıdır.</p>
+            <p>Perdelerin Ardında</p>
+          </div>
+    </footer>
+</body>
+<script>
+    document.getElementById("submit-comment").addEventListener("click", function () {
+    const commentInput = document.getElementById("comment-input");
+    const commentText = commentInput.value.trim();
+
+    if (commentText !== "") {
+        const commentsContainer = document.getElementById("comments");
+        const commentElement = document.createElement("div");
+        commentElement.classList.add("comment");
+        commentElement.innerHTML = `<p>${commentText}</p>`;
+        commentsContainer.appendChild(commentElement);
+
+        commentInput.value = ""; // Yorum kutusunu temizle
+    } else {
+        alert("Lütfen bir yorum yazın.");
+    }
+});
+
+</script>
+</html>

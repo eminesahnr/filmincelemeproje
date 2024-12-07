@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - PerdelerinArdında</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <section class="about">
+        <div class="about-container">
+            <h2>PERDELERİN ARDINDA</h2>
+            <p>
+                <strong>Hoş Geldiniz!</strong>
+            </p>
+            <p>
+                Biz, sinemaya olan tutkumuzu paylaşmak ve film dünyasında yeni keşifler yapmanıza yardımcı olmak için buradayız. <strong>PerdelerinArdında</strong>, film meraklıları için bir buluşma noktasıdır. Burada, farklı türlerdeki filmleri derinlemesine incelediğimiz, özgün yorumlar sunduğumuz ve sinemanın büyülü dünyasında birlikte yolculuğa çıktığımız bir platform sunuyoruz.
+            </p>
+            <p>
+                Film izlemek bir tutku, bir hobi veya sadece bir eğlenceden çok daha fazlasıdır. Her bir film, kendine özgü bir anlatım dili, derinlikli karakterler ve güçlü bir mesaj taşır. Bizim amacımız, bu yapıtların ardındaki anlamları keşfetmek ve izleyicilere farklı bir bakış açısı kazandırmaktır. Her film incelememizde, yalnızca sinematografik özelliklere odaklanmakla kalmıyor; aynı zamanda senaryo, oyunculuk, yönetmenlik ve müzik gibi unsurları da derinlemesine ele alıyoruz.
+            </p>
+
+            <p>
+                Amacımız, film tutkunlarını bir araya getirmek ve herkesin sinemaya olan ilgisini daha da derinleştirmektir. İster bir film eleştirmeni olun, ister sadece film izlemeyi seven biri; burada herkes için bir şeyler var.
+            </p>
+            <p>
+                Film dünyasının büyüsüne kapılın, keşfedin ve <strong>PerdelerinArdında</strong>'yla her zaman yeni bir film yolculuğuna çıkın.
+            </p>
+            <a href="#" class="button" id="goToInstagramButton">Bize Ulaşın</a> <!-- Instagram yönlendirme butonu -->
+        </div>
+    </section>
+
+    <script>
+        // Instagram profil linki (kendi kullanıcı adınızı buraya eklemelisiniz)
+        const instagramProfileUrl = 'https://www.instagram.com/gulferr.r/'; // Kendi Instagram profil linkinizi buraya ekleyin
+
+        // Instagram'a yönlendirecek buton
+        const goToInstagramButton = document.getElementById('goToInstagramButton');
+
+        // Butona tıklama olayı
+        goToInstagramButton.addEventListener('click', function() {
+            window.location.href = instagramProfileUrl; // Butona tıklandığında Instagram profilinize yönlendirir
+        });
+    </script>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <div class="social-links">
+            <!-- Twitter -->
+            <a href="https://twitter.com/eminesahiner0" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-twitter"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/gulferr.r/" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/gülferyiğit" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          
+        <p>&copy; <span id="year"></span> 2024 Tüm haklar saklıdır.</p>
+        <p>Perdelerin Ardında</p>
+      </div>
+</footer>
+</body>
+
+</html>
