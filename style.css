@@ -476,40 +476,6 @@ h2:hover {
     align-items: center;
 }
 
-.footer .search .search-input {
-    width: 15rem; /* Input kutusunun genişliği */
-    padding: 0.5rem; /* İç boşluk */
-    border-radius: 30px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    margin-right: 1rem; /* Buton ile arama kutusu arasında boşluk */
-    margin-top: 20px;
-    margin-left: 70px;
-}
-   .footer .search .btn{
-   
-    background-color: rgb(187, 187, 255);
-    padding: 0.7rem 1.5rem; /* Buton içindeki boşluk */
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-left: 10px;
-}
-.search .btn i {
-    font-size: 13px; /* İkon boyutunu ayarlama */
-    color: white; /* İkon rengi */
-  
-}
-
-.footer .search .btn:hover {
-    background-color: rgb(153, 153, 255); /* Hover (üzerine gelindiğinde) renk değişikliği */
-}
-
-
 /* Responsive */
 
 @media (max-width: 767px) {
