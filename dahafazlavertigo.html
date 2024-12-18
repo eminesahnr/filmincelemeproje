@@ -8,7 +8,8 @@
     <title>Film Detayları</title>
     <style>
         /* Genel Stiller */
-        * {
+    /* Genel Stiller */
+    * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -67,16 +68,15 @@
             margin-bottom: 25px;
         }
 
-        /* Film Bilgileri */
+        /* Movie Details */
         .movie-details {
             padding: 20px;
             background-color: #ffffff;
-            margin-bottom: 40px; /* Filmler arasındaki mesafeyi ayarlamak için */
         }
 
         .details-container {
             display: flex;
-            align-items: center; /* Görsellerin ve metnin düzgün hizalanmasını sağlar */
+            align-items: flex-start; /* Görsellerin ve metnin düzgün hizalanmasını sağlar */
             gap: 20px;
         }
 
@@ -104,36 +104,117 @@
             font-size: 18px;
         }
 
-        .image-box-container {
-            display: flex; /* Flex düzeni ile fotoğraflar yan yana */
-            gap: 20px; /* Fotoğraflar arasında boşluk bırakır */
-        }
 
-        .image-box {
-            border: 2px solid #ddd;
-            padding: 10px;
-            width: 120px; /* Sabit genişlik */
-            text-align: center; /* Yazan ismi ortalar */
-            box-sizing: border-box; /* Border ve padding dahil */
-        }
-
-        .image-box img {
-            width: 100%; /* Resimler konteyneri tam doldurur */
+             /* Fotoğraf */
+             .side-image-container {
+            width: 200px;  /* Genişliği %100'den daha küçük yapmak */
             height: auto;
-            object-fit: cover; /* Resmi kapsar, en boy oranını bozmadan kırpabilir */
-        }
+            flex-direction: column;
+            align-items: center;
+            position: relative;  /* Konumlandırma için göreceli pozisyon */
+            margin-top: -270px;  /* Yukarı kaydırmak için negatif margin */
+            margin-left: 520px;  /* Sağa kaydırmak için pozitif margin */
+            display: flex;
+            gap: 20px;  /* Fotoğraflar arasında boşluk bırakır */
+            background-color: #f8f8f8;  /* Arka plan rengi */
+    
+   
+             /* Bilgileri tutan konteyner */
+              .info {
+               display: flex;
+               flex-direction: column; /* Başlık ve metni dikeyde sıralar */
+               align-items: flex-start; /* Başlık sol tarafta hizalanır */
+               position: relative; /* Image-box'ların doğru yerleşebilmesi için */
+}
 
-        .image-box span {
-            color: red;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              /* Başlık */
+              .info h2 {
+               margin-bottom: 10px; /* Başlık ile metin arasına boşluk bırakır */
+               font-size: 24px;
+               position: relative; /* Alt çaprazda hizalamak için konumlandırma */
+}
+
+        }
+        /* Fotoğraf kutusu */
+           .image-box {
+             border: 2px solid #ddd; /* Border ekler */
+             padding: 10px;
+             width: 120px; /* Sabit genişlik */
+             text-align: center; /* Yazan ismi ortalar */
+             box-sizing: border-box; /* Border ve padding dahil */
+}
+
+        /* Resim boyutlandırma */
+            .image-box img {
+             width: 100%; /* Resimler konteyneri tam doldurur */
+             height: auto; /* Orantıyı korur */
+             object-fit: cover; /* Resmi kapsar, en boy oranını bozmadan kırpabilir */
+   
+}
+             .image-box span {
+               color: red; /* Yazı rengini kırmızı yapar */
+               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Yazı tipini değiştirir */
+               font-weight: bold; /* Yazıyı kalın yapar */
+
+}                     
+             .image-box:hover {
+              transform: scale(1.05); /* Hafifçe büyütme efekti */
+              box-shadow: 0 4px 8px rgba(238, 3, 3, 0.911); /* Hafif gölge ekler */
+              transition: all 0.3s ease-in-out; /* Geçiş efekti */
+}
+
+        /* Konteynerin flex düzeniyle yan yana yerleşmesini sağla */
+          .image-box-container {
+          display: flex; /* Flexbox düzeni */
+          gap: 60px; /* Aralarındaki boşluğu ayarlayabilirsiniz */
+          position: absolute; /* Başlığın hemen sağ altına yerleştirilecek */
+          top: 50%; /* Başlığın ortasında hizalayacak */
+          left: 70%; /* Başlığın tam sağında */
+          transform: translateY(-50%); /* Dikeyde ortalar */
+          margin-top: -10px; 
+}
+        .image-box-kutu{
+              display: flex; /* Flexbox düzeni */
+          gap: 60px; /* Aralarındaki boşluğu ayarlayabilirsiniz */
+          position: absolute; /* Başlığın hemen sağ altına yerleştirilecek */
+          top: 50%; /* Başlığın ortasında hizalayacak */
+          left: 70%; /* Başlığın tam sağında */
+          transform: translateY(-50%); /* Dikeyde ortalar */
+          margin-top: -10px; 
+        }
+             .side-image-kutu img {
+            width: 180px;  /* Görselin genişliğini değiştirmek */
+            height: 180px;  /* Görselin yüksekliğini değiştirmek */
+            object-fit: cover;
+        }
+        .side-image-kutu span {
+            margin-top: 10px;
             font-weight: bold;
+            font-size: 16px;
+            color: #ee0e0e;
+            font-size: 14px;  /* İsim metninin font boyutu */
+            text-align: center;  /* Metnin ortalanmasını sağlar */
+            display: block;  /* Metni bloğa dönüştürür */
+            margin-top: 5px;  /* İsim ile fotoğraf arasında boşluk bırakır */
+        }
+        .side-image-container img {
+            width: 180px;  /* Görselin genişliğini değiştirmek */
+            height: 180px;  /* Görselin yüksekliğini değiştirmek */
+            object-fit: cover;
         }
 
-        .image-box:hover {
-            transform: scale(1.05); /* Hafifçe büyütme efekti */
-            box-shadow: 0 4px 8px rgba(238, 3, 3, 0.911); /* Hafif gölge ekler */
-            transition: all 0.3s ease-in-out; /* Geçiş efekti */
+        .side-image-container span {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #ee0e0e;
+            font-size: 14px;  /* İsim metninin font boyutu */
+            text-align: center;  /* Metnin ortalanmasını sağlar */
+            display: block;  /* Metni bloğa dönüştürür */
+            margin-top: 5px;  /* İsim ile fotoğraf arasında boşluk bırakır */
         }
+        
+      
 
         .social-links a {
             display: inline-block;
@@ -335,4 +416,4 @@
     <p>&copy; 2024 PerdelerinArdında. Tüm hakları saklıdır.</p>
 </footer>
 </body>
-</html>
+</html> 
