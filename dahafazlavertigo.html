@@ -171,8 +171,32 @@
           top: 50%; /* Başlığın ortasında hizalayacak */
           left: 70%; /* Başlığın tam sağında */
           transform: translateY(-50%); /* Dikeyde ortalar */
-          margin-top: -90px; 
+          margin-top: -10px; 
 }
+        .image-box-kutu{
+              display: flex; /* Flexbox düzeni */
+          gap: 60px; /* Aralarındaki boşluğu ayarlayabilirsiniz */
+          position: absolute; /* Başlığın hemen sağ altına yerleştirilecek */
+          top: 50%; /* Başlığın ortasında hizalayacak */
+          left: 70%; /* Başlığın tam sağında */
+          transform: translateY(-50%); /* Dikeyde ortalar */
+          margin-top: -10px; 
+        }
+             .side-image-kutu img {
+            width: 180px;  /* Görselin genişliğini değiştirmek */
+            height: 180px;  /* Görselin yüksekliğini değiştirmek */
+            object-fit: cover;
+        }
+        .side-image-kutu span {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #ee0e0e;
+            font-size: 14px;  /* İsim metninin font boyutu */
+            text-align: center;  /* Metnin ortalanmasını sağlar */
+            display: block;  /* Metni bloğa dönüştürür */
+            margin-top: 5px;  /* İsim ile fotoğraf arasında boşluk bırakır */
+        }
         .side-image-container img {
             width: 180px;  /* Görselin genişliğini değiştirmek */
             height: 180px;  /* Görselin yüksekliğini değiştirmek */
@@ -278,7 +302,7 @@
             <p><strong>Konu:</strong> Zihinsel olarak düşük yeteneklere sahip ama iyi ve saf kalpli bir adam olan Forrest Gump'ın hayat hikayesini anlatır. Forrest, tesadüfi bir şekilde tarihî olaylara tanık olur, ünlü bir sporcu olur, ve Amerikan tarihindeki önemli dönemeçlerde (Vietnam Savaşı, Jim Crow yasaları, teknoloji çağının yükselişi vb.) aktif olarak yer alır. Film, Forrest'in saf ve samimi bakış açısıyla dünyayı keşfedişini, aşkını (Jenny Curran'a olan sevgisi) ve zorluklar karşısında gösterdiği azmi işler.
 
                 Hayat, talih ve kader temalarını duygusal bir dille ele alan film, Tom Hanks'in başrolünde olduğu etkileyici bir yolculuk sunar.</p>
-             <div class="image-box-container">
+             <div class="image-box-kutu">
                  <div class="image-box">
                  <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/09/12/17/118662439.jpg">
                  <span>Tom Hanks</span>
