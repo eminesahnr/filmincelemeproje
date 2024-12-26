@@ -344,7 +344,7 @@ h2:hover {
 
 /* Genel Stil */
 .about {
-    background-color: #fde4e4; /* Açık yeşil arka plan rengi */
+    background-color: #fde4e4; 
     padding: 400px 0;
     font-family: 'Arial', sans-serif;
 }
@@ -356,23 +356,22 @@ h2:hover {
     background-color: #fafafa;
     border-radius: 50px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    border: 1px solid #e0e0e0; /* Hafif gri kenarlık */
+    border: 1px solid #e0e0e0; 
     transition: all 0.3s ease;
     transform: translateY(-200px);
 }
 
 .about-container:hover {
-    transform: translateY(-10px); /* Hover efekti ile kutu hafifçe yukarı kayar */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Hoverda daha belirgin gölge efekti */
-}
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
 
 .about h2 {
     text-align: center;
     font-size: 2.5em;
-    color: #c80000; /* Yeşil başlık rengi */
+    color: #c80000; 
     margin-bottom: 20px;
     font-weight: 700;
-    text-transform: uppercase; /* Başlığı büyük harflerle yazma */
+    text-transform: uppercase; 
     letter-spacing: 2px;
     font-family:'Fredericka the Great', serif; 
 }
@@ -387,7 +386,7 @@ h2:hover {
 }
 
 .about p strong {
-    color: #750dc0;/* Vurgulanan metin için koyu yeşil */
+    color: #750dc0;
     font-weight: bold;
     font-family:'Fredericka the Great', serif;
     
@@ -398,7 +397,7 @@ h2:hover {
     font-weight: 700;
     text-align: center;
     margin-bottom: 40px;
-    color: #c60606;/* Başlıkla uyumlu tonunda */
+    color: #c60606;
 }
 
 .about-container::before {
@@ -409,7 +408,7 @@ h2:hover {
     transform: translateX(-50%);
     width: 80px;
     height: 8px;
-    background-color: #ab0909; /* Dekoratif kırmızı çizgi */
+    background-color: #ab0909; 
     border-radius: 5px;
 }
 
@@ -461,17 +460,17 @@ h2:hover {
 
 .footer-bottom {
     text-align: center;
-    padding: 10px 0; /* İçerik ve sınır arası boşluk */
-    background-color: #0c0050; /* Daha koyu bir alt arka plan */
-    color: #bbb; /* Açık gri yazı rengi */
-    font-size: 14px; /* Daha küçük yazı boyutu */
+    padding: 10px 0; 
+    background-color: #0c0050; 
+    color: #bbb; 
+    font-size: 14px; 
   }
   
   .footer-bottom p {
-    margin: 0; /* Varsayılan boşlukları kaldır */
+    margin: 0; 
   }
   .footer .search {
-    display: flex; /* Arama kutusu ve butonun yan yana gelmesi için */
+    display: flex; 
     justify-content: center;
     align-items: center;
 }
