@@ -77,12 +77,12 @@
 
         .details-container {
             display: flex;
-            align-items: flex-start; /* Görsellerin ve metnin düzgün hizalanmasını sağlar */
+            align-items: flex-start; 
             gap: 20px;
         }
 
         .movie-details .info p strong {
-            color: rgb(219, 51, 51); /* Başlık kısmı (Yönetmen, Tür, Oyuncular, vb.) için kırmızı renk */
+            color: rgb(219, 51, 51); 
         }
 
         .details-container img {
@@ -108,32 +108,32 @@
 
              /* Fotoğraf */
              .side-image-container {
-            width: 200px;  /* Genişliği %100'den daha küçük yapmak */
+            width: 200px; 
             height: auto;
             flex-direction: column;
             align-items: center;
-            position: relative;  /* Konumlandırma için göreceli pozisyon */
-            margin-top: -270px;  /* Yukarı kaydırmak için negatif margin */
-            margin-left: 520px;  /* Sağa kaydırmak için pozitif margin */
+            position: relative; 
+            margin-top: -270px;  
+            margin-left: 520px;  
             display: flex;
-            gap: 20px;  /* Fotoğraflar arasında boşluk bırakır */
-            background-color: #f8f8f8;  /* Arka plan rengi */
+            gap: 20px;  
+            background-color: #f8f8f8;  
     
    
              /* Bilgileri tutan konteyner */
               .info {
                display: flex;
-               flex-direction: column; /* Başlık ve metni dikeyde sıralar */
-               /* Başlık sol tarafta hizalanır */
-               position: relative; /* Image-box'ların doğru yerleşebilmesi için */
+               flex-direction: column; 
+    
+               position: relative; 
                
               }
 
               /* Başlık */
               .info h2 {
-               margin-bottom: 10px; /* Başlık ile metin arasına boşluk bırakır */
+               margin-bottom: 10px; 
                font-size: 50px;
-               position: relative; /* Alt çaprazda hizalamak için konumlandırma */
+               position: relative; 
                font-family: Georgia, 'Times New Roman', Times, serif;
               
 }
@@ -141,19 +141,18 @@
         }
         /* Fotoğraf kutusu */
            .image-box {
-             border: 2px solid #ddd; /* Border ekler */
+             border: 2px solid #ddd; 
              padding: 10px;
-             width: 120px; /* Sabit genişlik */
-             text-align: center; /* Yazan ismi ortalar */
-             box-sizing: border-box; /* Border ve padding dahil */
+             width: 120px; 
+             text-align: center; 
+             box-sizing: border-box; 
 }
 
         /* Resim boyutlandırma */
             .image-box img {
-             width: 100%; /* Resimler konteyneri tam doldurur */
-             height: auto; /* Orantıyı korur */
-             object-fit: cover; /* Resmi kapsar, en boy oranını bozmadan kırpabilir */
-   
+             width: 100%; 
+             height: auto; 
+             object-fit: cover; 
 }
              .image-box span {
                color: red; /* Yazı rengini kırmızı yapar */
