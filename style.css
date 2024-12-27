@@ -6,6 +6,7 @@ html::-webkit-scrollbar{
 html::-webkit-scrollbar-thumb{
     border-radius: 3rem;
     background-color:#ce2828
+	
 }
 body {
     height: 100%;
